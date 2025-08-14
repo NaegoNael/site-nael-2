@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Shop - Prise de RDV</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+        <img src="NaegoLogo2.png" alt="Logo Barber">
+    </div>
+        <div id="texte" class="NaegoLogo2.png">Bonjour</div>
+         
+
+    </header>
+    <script>
+    // Les mots à afficher
+    let mots = ["Bonjour", "Bienvenue", "Dans mon site de ", "Prise de rendez-vous ", "Barber Naego!"];
+    let index = 0;
+
+    function changerMot() {
+      // Passe au mot suivant
+      index = (index + 1) % mots.length;
+      document.getElementById("texte").innerText = mots[index];
+    }
+
+    // Change toutes les 1 seconde (1000 ms)
+    setInterval(changerMot, 1000);
+  </script>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <h1>Bienvenue chez Barber Shop</h1>
+        <p>Votre barbier préféré pour un style impeccable.</p>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="services">
+        <h2>Nos Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <h3>Coupe Classique</h3>
+                <p>Une coupe élégante et intemporelle.</p>
+            </div>
+            <div class="card">
+                <h3>Rasage Traditionnel</h3>
+                <p>Un rasage précis et apaisant.</p>
+            </div>
+            <div class="card">
+                <h3>Soins Capillaires</h3>
+                <p>Des soins personnalisés pour vos cheveux.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Rendez-vous -->
+    <section id="contact" class="contact">
+        <h2>Prendre un Rendez-vous</h2>
+        <form id="appointmentForm" action="submit.php" method="POST">
+            <input type="text" name="name" placeholder="Nom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="date" name="date" required>
+            <input type="numéros" name="numéros"placeholder="Numéros de téléphone." required>
+            <select name="service" required>
+                <option value="" disabled selected>Choisissez un service</option>
+                <option value="Coupe Classique">Coupe Classique</option>
+                <option value="Rasage Traditionnel">Rasage Traditionnel</option>
+                <option value="Soins Capillaires">Dégradé</option>
+                <option value="Soins Capillaires">Taper</option>
+                <option value="Soins Capillaires">Dégradé Espagnole</option>
+            </select>
+            <button type="submit">Réserver</button>
+        </form>
+        <p id="confirmationMessage" class="hidden">Votre rendez-vous a été confirmé !</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Barber Shop. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
